@@ -16,6 +16,7 @@ import pigusov.bots.telebot.handlers.MessageHandler;
 import pigusov.bots.telebot.utils.BotMessageEnum;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
 @Getter
 @Setter
@@ -47,7 +48,7 @@ public class WriteReadBot extends SpringWebhookBot {
     }
   }
 
-  private BotApiMethod<?> handleUpdate(Update update) throws IOException {
+  private BotApiMethod<?> handleUpdate(Update update) throws IOException, ExecutionException, InterruptedException {
     if (update.hasCallbackQuery()) {
       CallbackQuery callbackQuery = update.getCallbackQuery();
       return callbackQueryHandler.processCallbackQuery(callbackQuery);

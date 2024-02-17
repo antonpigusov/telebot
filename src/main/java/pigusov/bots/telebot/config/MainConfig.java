@@ -12,6 +12,7 @@ import pigusov.bots.telebot.handlers.MessageHandler;
 @AllArgsConstructor
 public class MainConfig {
   private final BotConfig botConfig;
+  private final TinkoffApiConfig tinkoffApiConfig;
 
   @Bean
   public SetWebhook setWebhookInstance() {
